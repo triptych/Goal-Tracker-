@@ -40,6 +40,8 @@ app.get('/logout', (req, res) => {
 // }
 
 
+// get the current state of our goals
+
 app.get("/data", (req, res) => {
   const user = getUserInfo(req);
   res.setHeader('Content-Type', 'application/json');
@@ -78,7 +80,15 @@ app.get('/old', (req, res) => {
 
 
 app.post("/set", (req, res) => {
+  const user = getUserInfo(req);
   console.log("req.body", req.body)
+  let data = req.body;
+  if(user.id){
+     data.name = user.name
+  db.set(user.id, req.body)
+  }
+ 
+
   res.send(req.body)
 })
 

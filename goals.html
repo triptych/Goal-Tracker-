@@ -6,12 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goal Tracker v1.0</title>
 <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+  <link rel="stylesheet" href="/goals.css"/>
 </head>
 <body>
   Hello, <span id="username">user</span>
  <!--  <button id='logout'>Log Out</button> -->
 
-  <button id="update">Post</button>
+  <section>
+    <h2> Goals List (alpha)</h2>
+    <ul id="goals-list">
+      
+    </ul>
+    <button id="add-goal">Add Goal</button>
+  </section>
+  <section class="hidden" id="goal-edit">
+    <div>
+      <label>Goal Name: </label><input type=text id='goal-name'/>
+    </div>
+    <div>
+      <label>Goal State:</label>
+      <select id='goal-state'>
+        <option value='todo'>TODO</option>
+        <option value='doing'>DOING</option>
+        <option value='done'>DONE</option>
+      </select>
+    </div>
+    <div>
+      <label>%</label>
+      <input id='goal-percent' type="range" list="tickmarks" min=0 max=100 step=10>
+<datalist id="tickmarks">
+<option value="0" label="0%"></option>
+<option value="10"></option>
+<option value="20"></option>
+<option value="30"></option>
+<option value="40"></option>
+<option value="50" label="50%"></option>
+<option value="60"></option>
+<option value="70"></option>
+<option value="80"></option>
+<option value="90"></option>
+<option value="100" label="100%"></option>
+</datalist>
+    </div>
+    <button id="goal-update">Update Goal</button>
+  </section>
+
+  
+  <button id="update">Save</button>
   
 <script src="goals.js"> </script>
 </body>
