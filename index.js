@@ -6,7 +6,8 @@ const app = express();
 
 // serve static files from "public" dir
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(express.json());
 
 // first login / auth
 app.get('/', (req, res) => {
@@ -38,6 +39,19 @@ app.get('/logout', (req, res) => {
 //   return res.sendStatus(200);
 // }
 
+
+app.get("/data", (req, res) => {
+  const user = getUserInfo(req);
+  res.setHeader('Content-Type', 'application/json');
+  if (user.id) {
+    db.get(user.id).then((r) => {
+      res.end(JSON.stringify(r));
+    })
+  } else {
+    res.end(JSON.stringify({ error: 'no data! ' }))
+  }
+});
+
 app.get('/old', (req, res) => {
   const user = getUserInfo(req);
   console.log("user:", user)
@@ -62,6 +76,11 @@ app.get('/old', (req, res) => {
   // res.send(`Hello, ${user.name}`)
 })
 
+
+app.post("/set", (req, res) => {
+  console.log("req.body", req.body)
+  res.send(req.body)
+})
 
 app.listen(3000, () => {
   console.log('server started');
