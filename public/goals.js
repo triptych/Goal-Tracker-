@@ -68,10 +68,14 @@ const render = () => {
     let glDOM = ``;
     state.goals.forEach((itm, idx, arr) => {
       glDOM = `${glDOM} 
-       <li data-id='${itm.id}'>
+       <li data-id='${itm.id}' class="goals-list-item">
          [${itm.name}] 
          - (${itm.state})
          - ${itm.percent}%
+         - <a href="#" class="goal-update">update</a>
+         - <a href="#" class="goal-delete">x</a>
+    
+         
         </li>`
     });
     gl.innerHTML = glDOM;

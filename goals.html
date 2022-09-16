@@ -5,19 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goal Tracker v1.0</title>
-<script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+<script src="https://replit.com/public/js/repl-auth-v2.js"></script><link rel="stylesheet" href="https://unpkg.com/mvp.css">
   <link rel="stylesheet" href="/goals.css"/>
 </head>
 <body>
-  Hello, <span id="username">user</span>
+  <header>
+     Hello, <strong><span id="username">user</span></strong>
+  </header>
+ 
  <!--  <button id='logout'>Log Out</button> -->
-
-  <section>
+<main>
+  <section class="goals-list">
     <h2> Goals List (alpha)</h2>
+    <aside>
     <ul id="goals-list">
       
     </ul>
-    <button id="add-goal">Add Goal</button>
+    </aside>
+    <div class="tools">
+        <button id="add-goal">Add Goal</button>
+    <button id="update">Save Goals</button>
+    </div>
+  
+
   </section>
   <section class="hidden" id="goal-edit">
     <div>
@@ -50,9 +60,10 @@
     </div>
     <button id="goal-update">Update Goal</button>
   </section>
+</main>
+  <footer>
 
-  
-  <button id="update">Save</button>
+  </footer>
   
 <script src="goals.js"> </script>
 </body>

@@ -1,7 +1,32 @@
-body {
-  background-color: tan;
+:root {
+  --width-card: 100%
 }
 
 .hidden {
   display: none;
+}
+
+.goals-list{
+  display:flex;
+  flex-direction:column;
+}
+
+main{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
+  width:100%;
+}
+
+header h1{
+  text-align: center;
+}
+
+.goals-list-item {
+  list-style-type: none;
+  color: #3c3c3c;
+  font-weight: bold;
+  white-space: nowrap;
 }
