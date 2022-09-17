@@ -5,7 +5,24 @@
 .hidden {
   display: none;
 }
+#goal-edit {
+  display: flex;
+  flex-direction: column;
+}
 
+#goal-edit.hidden {
+  display: none;
+}
+
+#goal-edit div{
+  xdisplay: flex;
+  flex-direction: row;
+}
+
+#goal-edit div label{
+  white-space: nowrap;
+  padding-right: 4px;
+}
 .goals-list{
   display:flex;
   flex-direction:column;
@@ -29,4 +46,13 @@ header h1{
   color: #3c3c3c;
   font-weight: bold;
   white-space: nowrap;
+}
+
+input[type="range"] {
+  display: inline;
+  color: green;
+}
+
+.loading {
+  opacity: 0.3;
 }
